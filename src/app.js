@@ -17,13 +17,6 @@ app.use(logger);
 app.get("/", (req, res) => {
   res.send("Smart Inventory API running...");
 });
-app.get("/health", (req, res) => {
-  res.status(200).json({
-    status: "ok",
-    uptime: process.uptime(),
-    timestamp: new Date(),
-  });
-});
 
 app.use("/api/products", productRoutes);
 app.use("/api/auth", authRoutes);
